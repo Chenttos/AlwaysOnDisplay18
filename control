@@ -1,0 +1,9 @@
+Package: com.example.alwaysondisplay16
+Name: AlwaysOnDisplay16
+Version: 0.1.0
+Architecture: iphoneos-arm
+Description: Reports Always-On Display capability on iOS 16 devices that lack it natively
+Maintainer: Your Name
+Author: Your Name
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 16.0)
