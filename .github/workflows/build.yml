@@ -1,4 +1,4 @@
-name: Build R3v4mp
+name: Build AlwaysOnDisplay18
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Build R3v4mp
+    name: Build AlwaysOnDisplay18
     runs-on: ubuntu-24.04
 
     steps:
@@ -174,9 +174,9 @@ jobs:
           echo "================================"
 
       # ================================================
-      # BUILD R3V4MP (rootless + roothide)
+      # BUILD ALWAYSONDISPLAY18 (rootless + roothide)
       # ================================================
-      - name: Build R3v4mp (rootless)
+      - name: Build AlwaysOnDisplay18 (rootless)
         env:
           THEOS: /home/runner/theos
         run: |
@@ -186,9 +186,9 @@ jobs:
           make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
           mkdir -p out
           debs=(packages/*.deb); test ${#debs[@]} -eq 1
-          cp "${debs[0]}" out/R3v4mp-rootless.deb
+          cp "${debs[0]}" out/AlwaysOnDisplay18-rootless.deb
 
-      - name: Build R3v4mp (roothide)
+      - name: Build AlwaysOnDisplay18 (roothide)
         env:
           THEOS: /home/runner/theos
         run: |
@@ -198,7 +198,7 @@ jobs:
           make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=roothide
           mkdir -p out
           debs=(packages/*.deb); test ${#debs[@]} -eq 1
-          cp "${debs[0]}" out/R3v4mp-roothide.deb
+          cp "${debs[0]}" out/AlwaysOnDisplay18-roothide.deb
 
       # ================================================
       # SHOW PACKAGE
@@ -217,15 +217,15 @@ jobs:
       # ================================================
       # Unzipped uploads: GitHub's artifact zip fails to open in the iPhone Files app
       # ("Bad message"), so each .deb is uploaded as a plain file (needs upload-artifact v7).
-      - name: Upload R3v4mp (rootless)
+      - name: Upload AlwaysOnDisplay18 (rootless)
         if: success()
         uses: actions/upload-artifact@v7
         with:
-          path: out/R3v4mp-rootless.deb
+          path: out/AlwaysOnDisplay18-rootless.deb
           archive: false
           if-no-files-found: error
 
-      - name: Upload R3v4mp (roothide)
+      - name: Upload AlwaysOnDisplay18 (roothide)
         if: success()
         uses: actions/upload-artifact@v7
         with:
