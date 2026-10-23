@@ -8,6 +8,7 @@
 		<array>
 			<string>SpringBoard</string>
 			<string>Preferences</string>
+			<string>backlightd</string>
 		</array>
 	</dict>
 </dict>
