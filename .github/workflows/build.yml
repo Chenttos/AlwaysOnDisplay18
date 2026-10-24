@@ -229,6 +229,6 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v7
         with:
-          path: out/R3v4mp-roothide.deb
+          path: out/AlwaysOnDisplay18-roothide.deb
           archive: false
           if-no-files-found: error
